@@ -7,7 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="page">
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="index.html">Kopi Inz</a>
+      <ul>
+        <li><a aria-current="page" href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="konten" class="page">
         <section class="hero">
             <p class="eyebrow">UMKM Sragi</p>
             <h1>Kopi Inz</h1>
@@ -17,11 +28,18 @@
 
         <section aria-labelledby="produk-title">
             <h2 id="produk-title">Produk unggulan</h2>
-            <ul class="products">
-                <li>Caffe Latte - Rp22.000</li>
-                <li>Americano - Rp18.000</li>
-                <li>Butterscoth - Rp25.000</li>
-            </ul>
+            <div class="product-list">
+  <article class="product-card">
+    <h3>Butterscoth</h3>
+    <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
+    <p class="price">Rp20.000</p>
+  </article>
+  <article class="product-card">
+    <h3>Americano</h3>
+    <p>Rasa ringan dengan aroma kopi yang kuat, pas untuk ngoding.</p>
+    <p class="price">Rp18.000</p>
+  </article>
+</div>
         </section>
 
         <section class="info" aria-labelledby="info-title">
@@ -44,7 +62,20 @@
                 </div>
             </div>
         </section>
+
+        </p>
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/6281548437506">
+          Hubungi Kami Melalui WhatsApp
+        </a>
+      </p>
+    </section>
+
     </main>
+    <footer class="site-footer">
+  <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
+</footer>
+<script src="js/script.js"></script>
 
     <script src="js/script.js"></script>
 </body>
