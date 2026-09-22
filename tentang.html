@@ -3,29 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tentang Kopi Nusa - Website UMKM</title>
+    <meta name="description" content="Cerita di balik Kopi Inz, UMKM kopi lokal di Sragi, Pekalongan." />
+    <title>Tentang Kopi Inz - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
         <a class="brand" href="index.html">Kopi Inz</a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
         </ul>
       </nav>
     </header>
+
     <main id="konten" class="page">
       <section aria-labelledby="tentang-title">
         <p class="eyebrow">Cerita Usaha</p>
         <h1 id="tentang-title">Tentang Kopi Inz</h1>
         <p>Kopi Inz adalah UMKM fiktif yang mengolah kopi lokal untuk kebutuhan pembelajaran.</p>
-        <img src="assets/images/etalase-kopi.svg" alt="Etalase Kopi Inz berisi kemasan kopi lokal" />
+        <img
+          class="product-photo product-photo--lebar"
+          src="assets/images/coffe.jpg"
+          alt="Espresso dituang ke cangkir berisi susu hingga membentuk latte art"
+          width="800"
+          height="600"
+        />
       </section>
+
       <section aria-labelledby="nilai-title">
-        <h2 id="nilai-title">Nilai yang Kami Bawa</h2>
+        <h2 id="nilai-title">Nilai yang kami bawa</h2>
         <ul>
           <li>Bahan lokal dari petani sekitar.</li>
           <li>Proses sederhana dan transparan.</li>
@@ -33,8 +45,11 @@
         </ul>
       </section>
     </main>
+
     <footer class="site-footer">
-      <p>&copy; 2026 Kopi Inz. Data pada halaman ini bersifat dummy.</p>
+      <p>&copy; <span id="tahun">2026</span> Kopi Inz. Data pada halaman ini bersifat dummy.</p>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

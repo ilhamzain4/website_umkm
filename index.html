@@ -1,82 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kopi Inz, UMKM kopi lokal di Sragi, Pekalongan. Lihat produk, harga, jam buka, dan lokasi kedai." />
     <title>Kopi Inz - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
-  <header class="site-header">
-    <nav class="nav" aria-label="Navigasi utama">
-      <a class="brand" href="index.html">Kopi Inzz</a>
-      <ul>
-        <li><a aria-current="page" href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang Kami</a></li>
-      </ul>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
-  <main id="konten" class="page">
-        <section class="hero">
-            <p class="eyebrow">UMKM Sragi</p>
-            <h1>Kopi Inz</h1>
-            <p>Kopi lokal pilihan untuk teman ngoding.</p>
-            <button id="promoButton" type="button">Lihat promo hari ini</button>
-        </section>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="brand" href="index.html">Kopi Inz</a>
+        <ul>
+          <li><a aria-current="page" href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <section aria-labelledby="produk-title">
-            <h2 id="produk-title">Produk unggulan</h2>
-            <div class="product-list">
-  <article class="product-card">
-    <h3>Butterscoth</h3>
-    <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
-    <p class="price">Rp20.000</p>
-  </article>
-  <article class="product-card">
-    <h3>Americano</h3>
-    <p>Rasa ringan dengan aroma kopi yang kuat, pas untuk ngoding.</p>
-    <p class="price">Rp18.000</p>
-  </article>
-</div>
-        </section>
-
-        <section class="info" aria-labelledby="info-title">
-            <h2 id="info-title">Jam Buka & Lokasi</h2>
-
-            <div class="info-container">
-                <div class="info-card">
-                    <h3> Jam Buka</h3>
-                    <p>Senin - Jumat: 09.00 - 23.00</p>
-                    <p>Sabtu - Minggu: 08.00 - 02.00</p>
-                </div>
-
-                <div class="info-card">
-                    <h3> Lokasi</h3>
-                    <p>
-                        Kopi Inz<br>
-                        Jl. Raya Sragi No. 47<br>
-                        Pekalongan, Jawa Tengah
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        </p>
-        <strong>WhatsApp:</strong>
-        <a href="https://wa.me/6281548437506">
-          Hubungi Kami Melalui WhatsApp
-        </a>
-      </p>
+     <main id="konten" class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">UMKM Pekalongan</p>
+      <h1 id="hero-title">Kopi Inz</h1>
+      <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
+      <button id="promoButton" type="button">Lihat promo hari ini</button>
+      <img src="assets/images/coffe.jpg" alt="Segelas latte dengan latte art hati di meja kayu" />
     </section>
 
+      <section aria-labelledby="produk-title">
+        <h2 id="produk-title">Produk unggulan</h2>
+        <div class="product-list">
+          <article class="product-card product-card--baru">
+            <span class="badge">Baru</span>
+            <img
+              class="product-photo"
+              src="assets/images/latte caramel.jpg"
+              alt="Segelas Latte Caramel dingin dengan whipped cream dan siraman saus karamel"
+              width="800"
+              height="600"
+            />
+            <h3>Latte Caramel</h3>
+            <p>Espresso dan susu segar dengan saus karamel, ditutup whipped cream. Manisnya pas untuk yang baru mulai suka kopi.</p>
+            <p class="price">Rp25.000 <span class="unit">/ gelas 250 ml</span></p>
+          </article>
+
+          <article class="product-card">
+            <div class="produk-card2">
+            <img
+              class="product-photo"
+              src="assets/images/Butterscotch.jpg"
+              alt="Segelas kopi Butterscotch dengan lapisan susu dan taburan gula aren"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <h3>Butterscotch</h3>
+            <p>Kopi susu dengan sentuhan karamel butterscotch dan taburan gula aren, manis dan creamy untuk memulai hari.</p>
+            <p class="price">Rp20.000 <span class="unit">/ gelas 250 ml</span></p>
+            </div>
+          </article>
+          </section>
+
+      <section class="info" aria-labelledby="info-title">
+        <h2 id="info-title">Jam buka lokasi</h2>
+        <div class="info-container">
+          <div class="info-card">
+            <h3>Jam buka</h3>
+            <p>Senin - Jumat: 09.00 - 23.00</p>
+            <p>Sabtu - Minggu: 08.00 - 02.00</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Lokasi</h3>
+            <p>
+              Kopi Inz<br />
+              Jl. Raya Sragi No. 47<br />
+              Pekalongan, Jawa Tengah
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="kontak-title">
+        <h2 id="kontak-title">Pesan kontak</h2>
+        <p>Pesan lebih dulu supaya kopimu siap saat kamu sampai di kedai.</p>
+        <p>
+          <strong>WhatsApp:</strong>
+          <a href="https://wa.me/6281548437506">Hubungi kami melalui WhatsApp</a>
+        </p>
+      </section>
     </main>
+
     <footer class="site-footer">
-  <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
-</footer>
-<script src="js/script.js"></script>
+      <p>&copy; <span id="tahun">2026</span> Kopi Inz. Data pada halaman ini bersifat dummy.</p>
+    </footer>
 
     <script src="js/script.js"></script>
-</body>
-</html>-
+  </body>
+</html>
