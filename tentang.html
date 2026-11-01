@@ -6,14 +6,21 @@
     <meta name="description" content="Cerita di balik Kopi Inz, UMKM kopi lokal di Sragi, Pekalongan." />
     <title>Tentang Kopi Inz - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon_rmv.png" />
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">Kopi Inz</a>
-        <ul>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/images/logo.png" alt="Kopi Inz" width="656" height="591" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul id="menu-utama">
           <li><a href="index.html">Beranda</a></li>
           <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html">Produk</a></li>
