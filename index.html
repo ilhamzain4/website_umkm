@@ -6,14 +6,21 @@
     <meta name="description" content="Kopi Inz, UMKM kopi lokal di Sragi, Pekalongan. Lihat produk, harga, jam buka, dan lokasi kedai." />
     <title>Kopi Inz - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon_rmv.png" />
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">Kopi Inz</a>
-        <ul>
+        <a class="brand" href="index.html"><img class="brand-logo" src="assets/images/logo.png" alt="Kopi Inz" width="656" height="591" /></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul id="menu-utama">
           <li><a aria-current="page" href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html">Produk</a></li>
@@ -41,10 +48,11 @@
             <span class="badge">Baru</span>
             <img
               class="product-photo"
-              src="assets/images/latte caramel.jpg"
+              src="assets/images/latte%20caramel.jpg"
               alt="Segelas Latte Caramel dingin dengan whipped cream dan siraman saus karamel"
               width="800"
               height="600"
+              loading="lazy"
             />
             <h3>Latte Caramel</h3>
             <p>Espresso dan susu segar dengan saus karamel, ditutup whipped cream. Manisnya pas untuk yang baru mulai suka kopi.</p>
