@@ -1,29 +1,29 @@
 "use strict";
 
-console.log("P09 JavaScript aktif");
+console.log("P10 JavaScript aktif");
 
 const produkUmkm = [
-  { nama: "Latte Caramel", kategori: "Kopi susu", harga: 25000, stok: 12 },
-  { nama: "Matcha Latte", kategori: "Non-kopi", harga: 24000, stok: 9 },
-  { nama: "Cappuccino", kategori: "Kopi susu", harga: 22000, stok: 4 },
-  { nama: "Cafe Latte", kategori: "Kopi susu", harga: 21000, stok: 15 },
-  { nama: "Butterscotch", kategori: "Kopi susu", harga: 20000, stok: 3 },
-  { nama: "Ice Americano", kategori: "Kopi hitam", harga: 18000, stok: 0 },
+  { nama: "Latte Caramel", kategori: "Kopi susu", harga: 25000, stok: 12, unggulan: true },
+  { nama: "Matcha Latte", kategori: "Non-kopi", harga: 24000, stok: 9, unggulan: false },
+  { nama: "Cappuccino", kategori: "Kopi susu", harga: 22000, stok: 4, unggulan: false },
+  { nama: "Cafe Latte", kategori: "Kopi susu", harga: 21000, stok: 15, unggulan: false },
+  { nama: "Butterscotch", kategori: "Kopi susu", harga: 20000, stok: 3, unggulan: true },
+  { nama: "Ice Americano", kategori: "Kopi hitam", harga: 18000, stok: 0, unggulan: false },
 ];
 
-console.table(produkUmkm);
+function formatRupiah(nilai) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  }).format(nilai);
+}
 
-const formatRupiah = new Intl.NumberFormat("id-ID", {
-  style: "currency",
-  currency: "IDR",
-  maximumFractionDigits: 0,
-});
-
-console.log(formatRupiah.format(produkUmkm[0].harga));
+console.log(formatRupiah(85000));
 
 function statusStok(stok) {
-  if (stok === 0) {
-    return { label: "Habis", className: "empty" };
+  if (stok <= 0) {
+    return { label: "Habis", className: "warning" };
   }
 
   if (stok <= 5) {
@@ -33,52 +33,50 @@ function statusStok(stok) {
   return { label: "Tersedia", className: "" };
 }
 
-function labelKategori(kategori) {
-  switch (kategori) {
-    case "Kopi susu":
-      return "Kopi susu pilihan";
-    case "Kopi hitam":
-      return "Kopi hitam tanpa susu";
-    case "Non-kopi":
-      return "Pilihan non-kopi";
-    default:
-      return "Produk UMKM";
-  }
+console.log(statusStok(0));
+console.log(statusStok(3));
+console.log(statusStok(12));
+
+function buatKartuProduk(produk) {
+  const status = statusStok(produk.stok);
+
+  return `
+    <article class="js-product-card">
+      <h3>${produk.nama}</h3>
+      <p class="category-note">${produk.kategori}</p>
+      <p class="price">${formatRupiah(produk.harga)}</p>
+      <span class="stock-badge ${status.className}">${status.label}</span>
+    </article>
+  `;
 }
 
 function renderProduk() {
   const grid = document.querySelector("#produk-dinamis");
   const ringkasan = document.querySelector("#produk-ringkasan");
+  const unggulan = document.querySelector("#produk-unggulan");
 
-  if (!grid || !ringkasan) {
+  if (!grid || !ringkasan || !unggulan) {
+    console.warn("Target render produk belum lengkap.");
     return;
   }
 
-  let jumlahTersedia = 0;
-  let markup = "";
+  produkUmkm.forEach((produk) => {
+    console.log("Debug produk:", produk.nama, "stok:", produk.stok);
+  });
 
-  for (const produk of produkUmkm) {
-    const status = statusStok(produk.stok);
-    const kategori = labelKategori(produk.kategori);
-    const labelAksi = produk.stok > 0 ? "Siap dipesan" : "Hubungi admin";
+  const produkTersedia = produkUmkm.filter((produk) => produk.stok > 0); 
+  const produkUnggulan = produkUmkm.find((produk) => produk.unggulan === true);
+  const markupProduk = produkTersedia.map(buatKartuProduk).join("");
 
-    if (produk.stok > 0) {
-      jumlahTersedia = jumlahTersedia + 1;
-    }
+  grid.innerHTML = markupProduk;
+  ringkasan.textContent = `${produkTersedia.length} produk tersedia dari ${produkUmkm.length} data.`;
 
-    markup = markup + `
-      <article class="js-product-card">
-        <h3>${produk.nama}</h3>
-        <p>${kategori}</p>
-        <p class="price">${formatRupiah.format(produk.harga)}</p>
-        <span class="stock-badge ${status.className}">${status.label}</span>
-        <p>${labelAksi}</p>
-      </article>
-    `;
-  }
+  unggulan.textContent = produkUnggulan
+    ? `Produk unggulan: ${produkUnggulan.nama}`
+    : "Belum ada produk unggulan.";
 
-  grid.innerHTML = markup;
-  ringkasan.textContent = `${jumlahTersedia} produk tersedia dari ${produkUmkm.length} data.`;
+  console.log("Jumlah produk tersedia:", produkTersedia.length); 
+  console.table(produkUmkm);
 }
 
 document.addEventListener("DOMContentLoaded", renderProduk);
